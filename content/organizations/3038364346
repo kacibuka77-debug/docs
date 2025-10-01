@@ -1,0 +1,11 @@
+pub mut class Iterator<T> {
+    require pub fx hasNext(): Bool
+
+    require pub fx next(): T
+}
+
+pub trait Iterable<T> {
+   pub fx @magic @for(consumer: Fx<Void, T>): Void;
+
+   pub fx iterator(): Iterator<T>;
+}
